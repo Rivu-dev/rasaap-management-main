@@ -24,12 +24,20 @@ import EditBusinessDetails from './components/shopping-view/profile'
 import OrderListing from './pages/admin-view/Orderlisting'
 import BusinessCategory from './components/shopping-view/selectbusiness'
 import KYCPage from './components/shopping-view/kycpage1'
+import AuthLayout from './components/auth/layout'
+import AuthLogin from './pages/auth/login'
+import AuthRegister from './pages/auth/register'
 
 const App = () => {
   return (
     <div className='flex flex-col overflow-hidden bg-white'>
     {/* common component */}
     <Routes>
+      <Route path="/auth" element={<AuthLayout/>}>
+      <Route path="login" element={<AuthLogin/>}/>
+      <Route path="register" element={<AuthRegister/>}/>
+
+      </Route>
     <Route path="/login" element={<SignIn/>}/> 
 
        <Route path="/shop" element={
